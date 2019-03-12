@@ -12,8 +12,7 @@ hadoop-2.5.0-cdh5.3.3
 NETWORKING=yes
 HOSTNAME=hadoop0
 
-查看:hostname
-如果hostname未修改成指定的，执行：hostname hostname0（根据实际修改）
+
 4、给三台机器分别做好 IP 映射
 路径：/etc/hosts
 文件末尾追加：
@@ -21,6 +20,14 @@ HOSTNAME=hadoop0
 192.168.138.130 hadoop1
 192.168.138.131 hadoop2
 以上2-4三台机器都需要执行
+
+修改:127.0.0.1   localhost hadoop2 localhost4 localhost4.localdomain4
+查看:hostname
+如果hostname未修改成指定的,执行以下操作修改hostname
+vi /etc/sysconfig/network
+HOSTNAME=xxxxx
+
+重启服务器：rebook
 
 5、SSH免密登录
 ssh-keygen -t rsa -P ""
