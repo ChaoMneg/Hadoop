@@ -23,11 +23,8 @@ HOSTNAME=hadoop0
 
 修改:127.0.0.1   localhost hadoop2 localhost4 localhost4.localdomain4
 查看:hostname
-如果hostname未修改成指定的,执行以下操作修改hostname
-vi /etc/sysconfig/network
-HOSTNAME=xxxxx
+如果hostname未修改成指定的,执行以下操作修改hostname newname
 
-重启服务器：rebook
 
 5、SSH免密登录
 ssh-keygen -t rsa -P ""
