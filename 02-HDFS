@@ -1,0 +1,37 @@
+Linux下基本命令：在Master结点测试
+1.上传文件
+hdfs dfs -put /home/hadoop/data/ccf_offline_stage1_test_revised.csv  /test1.csv
+hdfs dfs -put /本地文件路径  /HDFS文件路径
+
+2、查看文件信息
+hdfs dfs -ls /test1.csv
+
+3、统计目录下文件的大小
+hdfs dfs -du -s /test1.csv
+hdfs dfs -du -h /test1.csv
+
+4、删除文件
+hdfs dfs -rm /test1.csv
+
+5、查看文件内容
+hdfs dfs -cat /test1.csv
+
+6、创建文件夹
+hdfs dfs -mkdir -p /meng
+
+7、文件移动
+hdfs dfs -mv /test1.csv /meng
+
+8、修改文件所属组
+增加组：groupadd meng
+修改组：hdfs dfs -chgrp -R meng /meng/test1.csv
+
+9、修改文件权限
+hdfs dfs -chmod -R 755 /meng/test1.csv
+
+10、清空回收站
+类似windows的回收站
+hdfs dfs -expunge
+
+11、下载文件到本地
+hdfs dfs -get -p /meng/test1.csv /home/hadoop/data/
